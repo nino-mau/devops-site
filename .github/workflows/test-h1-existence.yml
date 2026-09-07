@@ -1,0 +1,13 @@
+name: "Check H1 Existence"
+
+on: [push, pull_request]
+
+jobs:
+  check_file_existence:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Check h1 existence
+        run: grep -q "h1" ./src/App.vue && echo "Found h1"
