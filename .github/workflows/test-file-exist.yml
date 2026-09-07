@@ -10,5 +10,9 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Check file existence
-        if: ${{ hashFiles('skdfjoisdifujsdf.html') != '' }}
-        run: echo "All files exist!"
+        if: ${{ hashFiles('index.html') != '' }}
+        run: echo "File does exist"
+
+      - name: Check file non-existence
+        if: ${{ hashFiles('skdfjoisdifujsdf.html') == '' }}
+        run: echo "File does not exist"
